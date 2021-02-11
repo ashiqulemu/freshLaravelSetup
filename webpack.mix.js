@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+var tailwindcss = require('tailwindcss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,6 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css') .options({
-          processCssUrls: true,
-    }).browserSync({"proxy": "localhost:8000"});
+    .sass('resources/sass/app.scss', 'public/css', ).options({
+    processCssUrls: false,
+    postCss: [ tailwindcss('tailwind.config.js') ],
+}).browserSync({"proxy": "localhost:8000"});
