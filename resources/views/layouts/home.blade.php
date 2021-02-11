@@ -2,5 +2,5 @@
 @section('content')
  <div class="jumbotron">
   im home 
- </div>
+ </div> 
 @endsection
